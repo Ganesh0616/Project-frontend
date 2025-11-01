@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../common/Header";
 import OrderStyles from "../../Styles/OrderPage.module.css";
-
+import { API_BASE } from "../../api";
 const OrderPage = () => {
   const [orders, setOrders] = useState([]);
   const token = localStorage.getItem("token");
@@ -12,7 +12,7 @@ const OrderPage = () => {
     const fetchOrders = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/PowerHouseFitHub/myOrders",
+          `${API_BASE}/PowerHouseFitHub/myOrders`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setOrders(res.data);

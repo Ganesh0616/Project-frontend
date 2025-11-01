@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 import Navigation from "../common/Header";
 import CartStyles from "../../Styles/CartPage.module.css";
-
 const CartPage = () => {
   const { cartItems, removeFromCart, increaseQty, decreaseQty, totalPrice } = useContext(CartContext);
   const navigate = useNavigate();

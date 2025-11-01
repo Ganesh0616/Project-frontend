@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Loginstyles from "../../Styles/Login.module.css";
-
+import { API_BASE } from "../../api";
 const Login = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ username: "", password: "" });
@@ -25,7 +25,7 @@ const Login = () => {
     setError("");
     try {
       const res = await axios.post(
-        "http://localhost:5000/PowerHouseFitHub/login",
+        `${API_BASE}/PowerHouseFitHub/login`,
         form
       );
       localStorage.setItem("token", res.data.token);

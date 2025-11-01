@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Navigation from "../common/Header";
 import { CartContext } from "../Context/CartContext";
 import DetailStyles from "../../Styles/ProductDetail.module.css";
-
+import { API_BASE } from "../../api";
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/PowerHouseFitHub/getsingle/${id}`
+          `${API_BASE}/PowerHouseFitHub/getsingle/${id}`
         );
         setProduct(res.data);
       } catch (err) {

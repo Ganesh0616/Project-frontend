@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../common/Header";
 import Styles from "../../Styles/AdminOrder.module.css";
-
+import { API_BASE } from "../../api";
 const AdminOrderPage = () => {
   const [orders, setOrders] = useState([]);
   const token = localStorage.getItem("token");
@@ -11,7 +11,7 @@ const AdminOrderPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/PowerHouseFitHub/orders", {
+        const res = await axios.get(`${API_BASE}/PowerHouseFitHub/orders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(res.data);
@@ -25,7 +25,7 @@ const AdminOrderPage = () => {
   const handleStatusChange = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/PowerHouseFitHub/orders/${id}`,
+        `${API_BASE}/PowerHouseFitHub/orders/${id}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -37,7 +37,7 @@ const AdminOrderPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/PowerHouseFitHub/orders/${id}`, {
+      await axios.delete(`${API_BASE}/PowerHouseFitHub/orders/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(orders.filter(o => o._id !== id));

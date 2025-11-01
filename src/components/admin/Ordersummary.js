@@ -3,7 +3,7 @@
   import axios from "axios";
   import { useNavigate } from "react-router-dom";
   import OrderSumStyles from "../../Styles/OrderSummary.module.css";
-
+  import { API_BASE } from "../../api";
   const OrderSummaryPage = () => {
     const { cartItems, setCartItems } = useContext(CartContext);
     const navigate = useNavigate();
@@ -26,7 +26,7 @@
 
       try {
         await axios.post(
-          "http://localhost:5000/PowerHouseFitHub/placeOrder",
+          `${API_BASE}/PowerHouseFitHub/placeOrder`,
           {
             userName: user.username,
             products: cartItems,

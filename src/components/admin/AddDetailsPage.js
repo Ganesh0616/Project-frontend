@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import AddDetailStyles from "../../Styles/AddDetails.module.css";
+import { API_BASE } from "../../api";
 const AddDetailsPage = () => {
   const [formData, setFormData] = useState({
     pname: "", price: "", size: "", description: "", category: [], weight: "", gender: "", stock: ""
@@ -44,7 +45,7 @@ const AddDetailsPage = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/PowerHouseFitHub/addProducts",
+        `${API_BASE}/PowerHouseFitHub/addProducts`,
         data,
         {
           headers: {

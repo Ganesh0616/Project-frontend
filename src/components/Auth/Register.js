@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import RegisterStyles from "../../Styles/Login.module.css"; // same CSS as login
-
+import { API_BASE } from "../../api";
 const Register = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -34,7 +34,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/PowerHouseFitHub/register",
+        `${API_BASE}/PowerHouseFitHub/register`,
         { username: form.username, password: form.password }
       );
       alert(res.data.message || "Registered successfully!");

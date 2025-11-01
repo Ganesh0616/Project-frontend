@@ -1,7 +1,7 @@
 // src/components/Context/CartContext.js
 import React, { createContext, useState } from "react";
 import axios from "axios";
-
+import { API_BASE } from "../../api";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -58,7 +58,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/PowerHouseFitHub/placeOrder",
+        `${API_BASE}/PowerHouseFitHub/placeOrder`,
         {
           userName: username,
           products: cartItems,

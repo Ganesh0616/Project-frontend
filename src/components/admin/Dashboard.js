@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Styles from "../../Styles/Dashboard.module.css";
-
+import { API_BASE } from "../../api";
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -13,12 +13,12 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const productsRes = await axios.get("http://localhost:5000/PowerHouseFitHub/getproduct", {
+        const productsRes = await axios.get(`${API_BASE}/PowerHouseFitHub/getproduct`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProductCount(productsRes.data.length);
 
-        const ordersRes = await axios.get("http://localhost:5000/PowerHouseFitHub/orders", {
+        const ordersRes = await axios.get(`${API_BASE}/PowerHouseFitHub/orders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrderCount(ordersRes.data.length);

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Navigation from "../common/Header";
 import ListStyles from "../../Styles/ProductList.module.css";
 import { CartContext } from "../Context/CartContext";
-
+import { API_BASE } from "../../api";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,7 +17,7 @@ const ProductList = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/PowerHouseFitHub/getproduct"
+          `${API_BASE}/PowerHouseFitHub/getproduct`
         );
         setProducts(response.data);
       } catch (error) {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../common/Header";
 import ViewStyles from "../../Styles/ViewPage.module.css";
-
+import { API_BASE } from "../../api";
 const ViewProductPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ const ViewProductPage = () => {
       try {
         if (!token) return alert("⚠️ You must be logged in as admin!");
         const res = await axios.get(
-          "http://localhost:5000/PowerHouseFitHub/getproduct",
+          `${API_BASE}/PowerHouseFitHub/getproduct`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setProducts(res.data);
@@ -35,7 +35,7 @@ const ViewProductPage = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await axios.delete(`http://localhost:5000/PowerHouseFitHub/deleteProduct/${id}`, {
+      await axios.delete(`${API_BASE}/PowerHouseFitHub/deleteProduct/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(products.filter((p) => p._id !== id));
@@ -62,7 +62,7 @@ const ViewProductPage = () => {
   const saveEdit = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/PowerHouseFitHub/updateProduct/${editingProduct}`,
+        `${API_BASE}/PowerHouseFitHub/updateProduct/${editingProduct}`,
         editForm,
         { headers: { Authorization: `Bearer ${token}` } }
       );
