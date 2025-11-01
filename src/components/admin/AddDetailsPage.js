@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import AddDetailStyles from "../../Styles/AddDetails.module.css";
-
 const AddDetailsPage = () => {
   const [formData, setFormData] = useState({
     pname: "", price: "", size: "", description: "", category: [], weight: "", gender: "", stock: ""
