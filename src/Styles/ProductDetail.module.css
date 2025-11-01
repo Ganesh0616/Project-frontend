@@ -1,0 +1,223 @@
+.detailContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 25px;
+  padding: 25px 40px;
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+  min-height: 90vh;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.imageWrapper {
+  flex: 1;
+  max-width: 420px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c1c1c;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Neon animated border effect */
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; bottom: -2px; right: -2px;
+  border-radius: 17px;
+  border: 2px solid #ff1a2a;
+  box-shadow: 0 0 10px #ff1a2a, 0 0 20px #e50914, 0 0 40px #ff3c3c;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imageWrapper:hover::before {
+  opacity: 1;
+}
+
+.imageWrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.08);
+}
+
+.info {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align content */
+  text-align: left;        /* left-align text */
+  gap: 10px;
+}
+
+.name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4caf50;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.info p {
+  margin: 3px 0;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+}
+.detailRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 1rem;
+  color: #fff;
+  justify-content: flex-start; /* left align all rows */
+}
+
+/* Buttons: Add to Cart & Buy Now with neon glow */
+.addToCart, .buyNow {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.addToCart {
+  background-color: #e50914;
+  color: #fff;
+  box-shadow: 0 0 10px #ff1a2a, 0 0 20px #e50914;
+}
+
+.buyNow {
+  background: linear-gradient(90deg, #ff3c3c, #c71c1c);
+  color: #fff;
+  box-shadow: 0 0 10px #ff3c3c, 0 0 20px #e50914;
+}
+
+.addToCart::after, .buyNow::after {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 14px;
+  border: 2px solid #ff1a2a;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.addToCart:hover::after, .buyNow:hover::after {
+  opacity: 1;
+}
+
+.addToCart:hover, .buyNow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #ff1a2a, 0 0 35px #ff3c3c;
+}
+
+/* Back Button */
+.back {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back:hover {
+  background-color: #555;
+  transform: translateY(-1px);
+}
+
+/* Logout button right-aligned */
+.logoutBtn {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-left: auto;
+  box-shadow: 0 0 10px #e50914, 0 0 20px #ff1a2a;
+  transition: all 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #ff1a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #ff1a2a, 0 0 35px #e50914;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .detailContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .imageWrapper, .info {
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: 1.9rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
+
+  .buttonGroup {
+    gap: 10px;
+  }
+}

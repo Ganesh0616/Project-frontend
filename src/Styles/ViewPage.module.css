@@ -1,0 +1,125 @@
+/* ===============================
+   FULL PAGE
+=============================== */
+.pageContainer {
+  min-height: 100vh; /* full screen */
+  background-color: #000; /* page black background */
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===============================
+   TABLE CONTAINER
+=============================== */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  background-color: #0a0a0a; /* Dark black container */
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  overflow-x: auto;
+  padding: 20px;
+}
+
+/* ===============================
+   TABLE STYLING
+=============================== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #333;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.table th {
+  background-color: #1a1a1a;
+  color: #ff1a2a; /* red headers */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #121212;
+}
+
+.table tr:hover {
+  background-color: #1f1f1f;
+}
+
+/* ===============================
+   INPUTS FOR EDITING
+=============================== */
+.table input {
+  background-color: #121212;
+  border: 1px solid #ff1a2a;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.table input:focus {
+  outline: none;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 5px #ff1a2a;
+  background-color: #1a1a1a;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button.editBtn { /* Edit button */
+  background-color: #ff1a2a;
+}
+
+button.deleteBtn { /* Delete button */
+  background-color: #ff1a2a;
+  margin-left: 5px;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}

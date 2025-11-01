@@ -1,0 +1,74 @@
+/* Header.module.css */
+.headNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(18,18,18,0.95);
+  padding: 15px 30px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  font-family: 'Poppins', sans-serif;
+}
+
+.headNavLogo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff1a2a;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.headNavLogo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(255,0,0,0.4);
+}
+
+.headNavLinks {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  justify-content: center;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.headNavLinks li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.headNavLinks li a:hover {
+  color: #ff1a2a;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(255,0,0,0.4);
+}
+
+.headNavCart a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.headNavCart a:hover {
+  color: #ff1a2a;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(255,0,0,0.4);
+}
+
+@media screen and (max-width: 768px) {
+  .headNavLinks { display: none; flex-direction: column; }
+  .headNavLinks.active { display: flex; }
+  .headNavCart { font-size: 1.2rem; }
+}

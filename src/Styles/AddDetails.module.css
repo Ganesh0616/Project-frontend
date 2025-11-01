@@ -1,0 +1,117 @@
+/* ===============================
+   PAGE CONTAINER
+=============================== */
+.pageContainer {
+  min-height: 100vh;
+  background-color: #121212; /* full page dark */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* ===============================
+   FORM CONTAINER
+=============================== */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* ===============================
+   PAGE TITLE
+=============================== */
+.pageTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: crimson;
+}
+
+/* ===============================
+   FORM
+=============================== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Inputs & textarea */
+.input,
+.textarea,
+select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Radio & checkbox groups */
+.radioGroup,
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.radioGroup label,
+.checkboxGroup label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Customize radio buttons */
+input[type="radio"] {
+  accent-color: crimson; /* modern way to make red */
+  width: 18px;
+  height: 18px;
+}
+
+/* Customize checkboxes */
+input[type="checkbox"] {
+  accent-color: crimson;
+  width: 18px;
+  height: 18px;
+}
+
+/* Submit button */
+.submitBtn {
+  padding: 12px 20px;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #ff4d4d;
+}

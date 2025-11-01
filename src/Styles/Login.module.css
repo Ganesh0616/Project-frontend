@@ -1,0 +1,142 @@
+/* Login.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.bg {
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.3)),
+    url("../../public/assets/pexels-leonmart-1552242.jpg") center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.main {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ff3c3c;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background-color: #111;
+  border: 1px solid #ff3c3c;
+  border-radius: 10px;
+  padding: 10px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255,60,60,0.2);
+}
+
+.card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+  padding: 35px 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255,60,60,0.25);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.input:focus {
+  border-color: #ff3c3c;
+  box-shadow: 0 0 8px rgba(255,60,60,0.3);
+  background-color: #222;
+}
+
+.input:hover {
+  background-color: #222;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff3c3c, #c71c1c);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginButton:hover {
+  background: linear-gradient(90deg, #ff5a5a, #e02e2e);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,60,60,0.3);
+}
+
+.footerText {
+  margin-top: 15px;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+.footerText span {
+  color: #ff3c3c;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footerText span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card {
+    padding: 25px 20px;
+  }
+
+  .main {
+    font-size: 1.8rem;
+  }
+
+  .input {
+    padding: 12px 10px;
+  }
+
+  .loginButton {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
